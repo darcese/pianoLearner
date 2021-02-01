@@ -39,4 +39,4 @@ export const incrementAsync = amount => dispatch => {
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
 export const selectCount = state => state.counter.value;
 
-export default counterSlice.reducer;
+export default counterSlice.reducer; //imported as counterReducer in store name+Reducer

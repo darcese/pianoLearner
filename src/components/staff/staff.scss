@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Symbola;
+
+    src: url('../staff/Symbola.otf');
+    }
+    
+
+.staff {
+    font-size: xxxx-large;
+    position: absolute;
+    margin-left:5%;
+    width: 90%;
+    height: 350px;
+    background-image: url(../../images/download.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 100%;
+    z-index: -1;
+    font-family: Symbola;   
+}

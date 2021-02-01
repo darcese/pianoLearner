@@ -1,0 +1,29 @@
+.container-flex{
+    display: flex;
+
+    &.column  {
+        flex-direction: column;
+    }
+
+    &.row  {
+        flex-direction: row;
+        align-content: center;
+        margin: auto;
+    }
+}
+
+.pop-up{
+    z-index: 1;
+}
+
+.with-border{
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: black;
+    background-color: lightgray;
+    width: 400px;
+    height: 140px;
+    margin-top:70px;
+    padding-top:20px;
+    margin: auto;
+}
