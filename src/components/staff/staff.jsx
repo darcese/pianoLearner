@@ -12,7 +12,13 @@ class Staff extends React.Component {
     }
 
     render(){
-        return (<div className = 'staff'> {this.state.notes.map((note,index) => <MusicNote key={note.id} noteLength={note.noteLength}></MusicNote>)} </div>
+        return (<div className = 'staff'> {this.state.notes.map((note,index) => <MusicNote key={note.id} noteLength={note.noteLength}></MusicNote>)} 
+            <hr className="stanza-line cleff-f"/>
+            <hr className="stanza-line cleff-d"/>
+            <hr className="stanza-line cleff-b"/>
+            <hr className="stanza-line cleff-g"/>
+            <hr className="stanza-line cleff-e"/>
+        </div>
         );
     }
 };

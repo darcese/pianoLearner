@@ -4,7 +4,7 @@
     src: url('../staff/Symbola.otf');
     }
     
-
+/*
 .staff {
     font-size: xxxx-large;
     position: absolute;
@@ -17,4 +17,46 @@
     opacity: 100%;
     z-index: -1;
     font-family: Symbola;   
+}
+*/
+
+
+.staff{
+ font-family: Symbola;
+ position: relative;
+}
+
+hr.stanza-line{
+
+        border-top: 1px solid black;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        width: 80%;
+        left: 10%;
+        position: absolute;
+
+        $distance-from-top: 50px;
+        $distance-between-lines: 10px;
+        
+        &.cleff-f{
+            top: $distance-from-top;
+        }
+
+        &.cleff-d{
+            top: $distance-from-top + $distance-between-lines;
+        }
+
+        &.cleff-b{
+            top: $distance-from-top + 2 * $distance-between-lines;
+        }
+
+        &.cleff-g{
+            top: $distance-from-top + 3 * $distance-between-lines;
+        }
+
+        &.cleff-e{
+            top: $distance-from-top + 4 * $distance-between-lines;
+        }
+
 }
