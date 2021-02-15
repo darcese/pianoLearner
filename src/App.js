@@ -10,7 +10,7 @@ import store from '../src/app/store.js';
 import {fetchInitialState} from './features/MIDI/midiSettingsSlice.js';
 
 
-import Staff from '../src/components/staff/staff.jsx';
+import GrandStaff from '../src/components/staff/staff.jsx';
 import AllowOrDenySpeakersDialogue from '../src/components/allow-or-deny-dialogue/allow-or-deny-dialogue.jsx';
 import ContainerForControlButtons from '../src/components/container-for-control-buttons/container-for-control-buttons.jsx';
 import loadAudioContext from '../src/features/MIDI/midiListener';
@@ -32,7 +32,8 @@ function App() {
      
         <header className="App-header"/>
         
-        <Staff></Staff>
+        <GrandStaff></GrandStaff>
+        <GrandStaff></GrandStaff>
         <AllowOrDenySpeakersDialogue />
      
     </div>

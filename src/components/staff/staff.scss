@@ -21,14 +21,19 @@
 */
 
 
-.staff{
+.grand-staff{
  font-family: Symbola;
+ display: block;
+ height: 320px; 
  position: relative;
 }
 
+
+
+
 hr.stanza-line{
 
-        border-top: 1px solid black;
+        border-top: 1pt solid black;
         border-bottom: none;
         border-left: none;
         border-right: none;
@@ -36,27 +41,83 @@ hr.stanza-line{
         left: 10%;
         position: absolute;
 
-        $distance-from-top: 50px;
-        $distance-between-lines: 10px;
+        $distance-from-top: 55pt;
+        $distance-between-lines: 10pt;
         
-        &.cleff-f{
-            top: $distance-from-top;
-        }
+        &.trebble{
+            &.fake-1{
+                top: $distance-from-top - 3 * $distance-between-lines;
+                border-top: 1px solid red;
+            }
 
-        &.cleff-d{
-            top: $distance-from-top + $distance-between-lines;
-        }
+            &.fake-2{
+                top: $distance-from-top - 2 * $distance-between-lines;
+                border-top: 1px solid red;
+            }
 
-        &.cleff-b{
-            top: $distance-from-top + 2 * $distance-between-lines;
-        }
+            &.fake-3{
+                top: $distance-from-top - 1 * $distance-between-lines;
+                border-top: 1px solid red;
+            }
 
-        &.cleff-g{
-            top: $distance-from-top + 3 * $distance-between-lines;
-        }
+            &.clef-f{
+                top: $distance-from-top;
+            }
 
-        &.cleff-e{
-            top: $distance-from-top + 4 * $distance-between-lines;
-        }
+            &.clef-d{
+                top: $distance-from-top + $distance-between-lines;
+            }
 
+            &.clef-b{
+                top: $distance-from-top + 2 * $distance-between-lines;
+            }
+
+            &.clef-g{
+                top: $distance-from-top + 3 * $distance-between-lines;
+            }
+
+            &.clef-e{
+                top: $distance-from-top + 4 * $distance-between-lines;
+            }
+        }
+        // Change distance from top for bass cleff
+        $distance-from-top:   $distance-from-top + 70pt;
+
+        &.bass{
+            &.clef-a{
+                top: $distance-from-top;
+            }
+
+            &.clef-f{
+                top: $distance-from-top + $distance-between-lines;
+            }
+
+            &.clef-d{
+                top: $distance-from-top + 2 * $distance-between-lines;
+            }
+
+            &.clef-b{
+                top: $distance-from-top + 3 * $distance-between-lines;
+            }
+
+            &.clef-g{
+                top: $distance-from-top + 4 * $distance-between-lines;
+            }
+
+            &.fake-1{
+                top: $distance-from-top + 5 * $distance-between-lines;
+                border-top: 1px solid blue;
+            }
+
+            &.fake-2{
+                top: $distance-from-top + 6 * $distance-between-lines;
+                border-top: 1px solid blue;
+            }
+
+            &.fake-3{
+                top: $distance-from-top + 7 * $distance-between-lines;
+                border-top: 1px solid blue;
+            }
+        }
 }
+//800
