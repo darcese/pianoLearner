@@ -28,6 +28,71 @@
  position: relative;
 }
 
+$distance-between-lines: 10pt;
+$distance-from-top: 55pt;
+$distance-to-bottom: $distance-from-top + 70pt + 5 * $distance-between-lines;
+$left-margin: 10%;
+$width: 80%;
+
+.stanza-brace{
+
+    z-index: 2;
+    position: relative;
+    display: inline;
+    top: 20%;
+    left: -40.4%;
+    font-size: 110pt;
+    color: orange;
+    
+}
+
+
+.trebble-clef-symbol {
+    position: absolute;
+    font-size: 60pt;
+    top: 49pt;
+    display: inline;
+    opacity: 100%;
+    left: calc(10% + 57px);
+}
+
+
+
+.bass-clef-symbol {
+    position: absolute;
+    font-size: 56pt;
+    top: 117pt;
+    display: inline;
+    opacity: 100%;
+    left: calc(10% + 54px);
+}
+
+.stanza-vertical{
+    border-left: 2pt solid black;
+    position: absolute;
+    top: 61pt;
+    height: 111pt;
+    display: inline;
+    
+
+    &.start-line{
+        left: $left-margin;
+    }
+
+
+    &.end-of-first-measure{
+        left: calc((10% + (1 / 3) * 80%) + 48px);
+    }
+
+    &.end-of-second-measure{
+        left: calc((10% + (2 / 3) * 80%) + 24px);
+    }
+
+    &.end-of-third-measure{
+        left: $left-margin + $width;
+    }
+
+}
 
 
 
@@ -37,12 +102,10 @@ hr.stanza-line{
         border-bottom: none;
         border-left: none;
         border-right: none;
-        width: 80%;
-        left: 10%;
+        width: $width;
+        left: $left-margin;
         position: absolute;
 
-        $distance-from-top: 55pt;
-        $distance-between-lines: 10pt;
         
         &.trebble{
             &.fake-1{

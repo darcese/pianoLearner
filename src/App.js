@@ -32,9 +32,10 @@ function App() {
      
         <header className="App-header"/>
         
-        <GrandStaff></GrandStaff>
-        <GrandStaff></GrandStaff>
         <AllowOrDenySpeakersDialogue />
+        <GrandStaff></GrandStaff>
+        <GrandStaff></GrandStaff>
+        
      
     </div>
   );
