@@ -7,6 +7,8 @@ import {
 import store from '../../app/store.js';
 
 
+import { nanoid } from 'nanoid'
+
 function loadAudioContext(){
   window.console.log("testing this script a ");
   var midiAccess=null;
@@ -48,17 +50,19 @@ function loadAudioContext(){
     function MIDIMessageEventHandler(event) {
       // log message data
 
-      let newDate = new Date();
-      let time = newDate.getTime();    
-      let transformedMIDIMessage = {note:event.data[1],messageTime:time};
+      const newDate = new Date();
+      const time = newDate.getTime();    
+      let transformedMIDIMessage = {note:event.data[1], id:nanoid()};
       
       try {
         //note-off
         if(event.data[2] === 0){
+          transformedMIDIMessage.timeEnded = time;
           store.dispatch(receivedNoteOffMessage(transformedMIDIMessage)); //serialize data first or else redux complains
         }
         //note-on
         else{
+          transformedMIDIMessage.timeStarted = time;
           store.dispatch(receivedNoteOnMessage(transformedMIDIMessage));
         }
 

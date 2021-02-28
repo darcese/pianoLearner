@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 import {salamanderPiano, startPlayingNoteSound, stopPlayingNoteSound} from '../../musicUtilities/playAndStopNotes.js';
 
+
 export const notesSlice = createSlice({
     name: 'notes',
     initialState: {
@@ -35,6 +36,8 @@ export const receivedNoteOnMessage = midiMessageObject => {
           startPlayingNoteSound(salamanderPiano, midiMessageObject.note, 
                                 state.midiSettings.allInstrumentsMidiKeyMap[state.midiSettings.currentInstrument])
         }
+       
+    
        dispatch(addNoteToNotesPlaying(midiMessageObject));
        
       }
@@ -47,10 +50,16 @@ export const receivedNoteOffMessage = midiMessageObject =>{
         stopPlayingNoteSound(salamanderPiano, midiMessageObject.note, 
                               state.midiSettings.allInstrumentsMidiKeyMap[state.midiSettings.currentInstrument])
       }
-      let originalNote = state.notes.notesPlaying.find(note => note.note === midiMessageObject.note)
-      let timeStarted = originalNote.messageTime;
-      let timeEnded = midiMessageObject.messageTime;
-      let noteCompleted = {note: midiMessageObject.note, timeStarted: timeStarted, timeEnded: timeEnded};
+
+      const noteCompleted = midiMessageObject;
+      const timeStarted = state.notes.notesPlaying.find(note => note.note === midiMessageObject.note).timeStarted;
+      noteCompleted.timeStarted = timeStarted;
+
+      console.log(noteCompleted.timeStarted);
+      console.log(noteCompleted.timeEnded);
+      console.log(noteCompleted.id);
+      console.log(noteCompleted.note);
+    
       dispatch(removeNoteFromNotesPlaying(midiMessageObject));
       dispatch(addNoteToNotesCompleted(noteCompleted)); 
       //const stateAfter = getState()      
@@ -64,3 +73,6 @@ export const receivedNoteOffMessage = midiMessageObject =>{
 
   
   export default notesSlice.reducer;
+
+
+ 
